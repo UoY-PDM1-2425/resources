@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDM Resources</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Using GitHub Desktop</h1>
+    </header>
+    <main>
+        <p>GitHub Desktop is an application for working with GitHub code repositories. <em>Note: If you are 
+            already familiar with using GitHub via the command line, feel free to skip these instructions and 
+            continue to use the command line.
+        </em></p>
+        <p>Key terms:</p>
+        <ul>
+            <li><strong>Repository (repo for short)</strong> - A place to store code files.</li>
+            <li><strong>Remote repo</strong> - The copy of the repository that lives on GitHub.com.</li>
+            <li><strong>Local repo</strong> - The copy of the repository that lives on your computer.</li>
+            <li><strong>Origin</strong> - The location of the remote repository.</li>
+            <li><strong>Clone</strong> - Make an initial copy (or clone) of a remote repository on your computer.</li>
+            <li><strong>Fetch</strong> - Fetch changes from the remote repo to your local repo.</li>
+            <li><strong>Pull</strong> - Integrate fetched changes into your local repo.</li>
+            <li><strong>Commit</strong> - Save the current state of your local repo. If something goes wrong, you will be able to "roll back" to an earlier commit.</li>
+            <li><strong>Push</strong> - Push the changes your have committed locally to the remote repo.</li>
+            <li><strong>Merge conflict</strong> - This occurs when you have changes committed to your local repo that conflict with 
+            changes made to the remote repo and GitHub cannot figure out how to resolve the differences. These can be tricky to sort out 
+            so ask an instructor for help.</li>
+        </ul>
+        <p>The standard workflow for using GitHub is:</p>
+        <ol>
+            <li>Clone a remote repo to your computer using GitHub Desktop.</li>
+            <li>Using VS Code, make edits to your local repo as needed and make sure to save your changes.</li>
+            <li>When you are finished or even just taking a break, use GitHub Desktop to commit your changes then push them to the remote repo.</li>
+            <li>Next time you want to work on the repo, use GitHub Desktop to fetch and pull changes from the origin, then start again from step 2.</li>
+        </ol>
+        <h2 id="setup">Set up</h2>
+        <ol>
+            <li>If you are working on a lab computer, GitHub Desktop should already be installed. Find it in Applications and open it. If you 
+                are working on your own computer, <a href="https://desktop.github.com/" target="_blank">download</a> and install GitHub Desktop then open it.</li>
+            <li>Sign in to GitHub. There are a couple of ways to get to the sign in screen:
+                <ol>
+                    <li>Click on "Clone a Repository from the internet". You will be prompted to sign in.</li>
+                    <li>OR, find the Settings menu. On Mac, go to the GitHub Desktop menu then click Settings. You will see an option to sign in to your account.</li>
+                </ol>
+                You will be directed to your browser to sign in. Once you have signed in, you should see any available repositories listed on the home screen of GitHub Desktop.
+            </li>
+        </ol>
+        <h2 id="clone">Clone a repository</h2>
+        <p>Some repositories are accessible to anyone who has the URL. Other repositories are private and will only 
+            be accessible if you have been given access rights.</p>
+        <h3>If you have been added to the repository (e.g. your practical repos):</h3>
+        <ol>
+            <li>Find the repository in the list on your GitHub Desktop home screen. You may need to click 
+                the refresh icon to search for new repos. If you already have a repo open in GitHub desktop:
+                <ol>
+                    <li>Click the little triangle next to the repository name.<br>
+                    <img src="./images/GitDesktop-repomenu.png" alt="The triangle next to the repo name opens a menu with more options." width="300px">
+                    </li>
+                    <li>Click the Add button then select "Clone Repository".<br>
+                    <img src="./images/GitDesktop-add.png" alt="Click the Add button then Clone repository." width="400px"></li>
+                    <li>In the popup window, select the first tab, "GitHub.com". Look for the repository name in the list. If 
+                        you don't see it, click the refresh button to update the list.
+                    </li>
+                </ol>
+            </li>
+            <li>Click the repository name, then click the "Clone &lt; repo name &gt;" button. </li>
+            <li>A form will appear. The first text field shows the URL of the remote repository. Leave 
+                this unchanged. Use the "Choose" button by the second text field to pick a folder on 
+                your computer. The repository will be downloaded to this folder. <strong>If you are working 
+                    on a lab computer, choose a folder in your filestore. Do not download to the desktop or 
+                    the computer's Documents or Downloads folders.
+                </strong>
+            </li>
+            <li>Click the "Clone" button. When the repository is cloned, you will be able to access its 
+                contents on your computer.
+            </li>
+            <li>Click "Open in Visual Studio Code" to open the repository folder in VS Code.</li>
+        </ol>
+        <h3>If you have been given the repository URL (e.g. the example code repo):</h3>
+        <ol>
+            <li>From the GitHub Desktop home screen, click "Clone a Repository from the Internet". OR if you already have a repository open: 
+                <ol>
+                    <li>Click the little triangle next to the repository name.<br>
+                    <img src="./images/GitDesktop-repomenu.png" alt="The triangle next to the repo name opens a menu with more options." width="300px">
+                    </li>
+                    <li>Click the Add button then select "Clone Repository".<br>
+                    <img src="./images/GitDesktop-add.png" alt="Click the Add button then Clone repository." width="400px"></li>
+                </ol>
+            </li>
+            <li>
+                The clone form will appear. Paste the repository URL into the first text field and, in the second text field, select the folder that 
+                you would like to download the repository to.<br>
+                <img src="./images/GitDesktop-clone.png" alt="Paste the URL into the first text field" width="400px">
+            </li>
+            <li>Click the Clone button. When the repository is cloned, you will be able to access its 
+                contents on your computer.</li>
+            <li>Click "Open in Visual Studio Code" to open the repository folder in VS Code.</li>
+        </ol>
+        <h2 id="commit">Commit and push your work</h2>
+        <p>For any repo that you have write access to, such as your repo for a practical, you should <strong>commit</strong> your changes and <strong>push</strong> 
+        them to the remote repo--the copy of the repository that lives on GitHub.com. This will back up your code and keep track of 
+        different versions. Note that you do not have write access to PDM1-example-code so you cannot push your changes for that repository.</p>
+        <ol>
+            <li>When you are ready to commit your work, open the repository in GitHub Desktop by selecting it from the list of available repos on the home 
+                screen. If another repo is open, click the little triangle next to its name to show the repo list.
+            </li>
+            <li>GitHub Desktop will show you a summary of the changes you have made. Take a moment to review the changes and make sure everything looks OK.</li>
+            <li>Enter a summary of what you have done in the "Summary" text box. This is known as the commit message. Aim to write one descriptive sentence. If 
+                you ever need to undo your changes and go back to an earlier version of your code, you will need to identify the version you want from the 
+                commit message. The clearer and more descriptive your commit messages, the easier this will be. 
+            </li>
+            <li>There is also a "Description" text box. You can leave this blank or use it to provide more information about the changes you are committing.</li>
+            <li>Click "Commit to main". The commit process will take a few seconds. On the screen that appears after the commit has finished, 
+                click "Push to origin". When the push is complete, you should see that there are no changed files.
+            </li>
+        </ol>
+        <h2 id="example-code">Working with the PDM1-example-code repo</h2>
+        <p>The PDM1 example code repo will be frequently updated with new examples. You will need to <strong>pull</strong> these changes to your 
+        computer to be able to see them. If you make edits to any of the code, you will also need to take care not to 
+        create a <strong>merge conflict</strong> or lose your work.</p>
+        <h3 id="pull-example-code">Pull changes</h3>
+        <p>We recommend you do this after every lecture so that you always have the latest code.</p>
+        <ol>
+            <li>It you haven't already done so, follow the <a href="#clone">instructions above</a> to clone the PDM-example-code repo. 
+                Use the URL <code>https://github.com/UoY-IM-PDM/PDM1-example-code.git</code>.
+            </li>
+            <li>In GitHub Desktop, select PDM1-example-code. If you have recently cloned the repo, it will likely already be 
+                selected. If it is not selected, click the little triangle next to the name of the currently selected repo 
+                and find PDM1-example-code in the list of repositories.
+            </li>
+            <li>
+                Click the "Fetch origin" button at the top of the GitHub Desktop window. The button will switch to a progress indicator 
+                briefly, then it will read "Pull Origin". Click the button again to pull the changes from the remote repository to your 
+                computer.
+            </li>
+            <li>If you don't see any error messages or warnings, you are done. If you see a message alerting you of a "merge conflict", 
+                please let an instructor know and we will help you resolve it.
+            </li>
+        </ol>
+        <h3 id="edit-example-code">Editing code</h3>
+        <p>You are free to edit the code in the PDM1-example-code repo. However, we <strong>strongly</strong> recommend that you <strong>make 
+            a copy</strong> of the code and edit the copy rather than the original code. This will help to avoid 
+            merge conflicts. For example, if you want to edit the 
+            basicShapes example from lecture 1, copy the example folder (basicShapes) and give it a new name. You can then edit 
+            sketch.js in the new folder. You may store the copied code in the repository folder.</p>
+        <p>Note that you only have read access to the PDM1-example-code repo. This means that you can see all the code in the repo and you can 
+            edit it on your own computer but you do not have the ability to push your changes to the remote repository.
+        </p>
+    </main>
+</body>
+</html>

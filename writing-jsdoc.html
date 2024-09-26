@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PDM Resources</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Writing JSDoc</h1>
+    </header>
+    <main>
+        <p>You should document every function you write (except p5.js functions like <code>draw()</code>) using JSDoc.
+        </p>
+        <section>
+            <h2>Writing JSDoc in VS Code</h2>
+            <p>VS Code has built-in support that makes writing JSDoc a little easier. Start by writing your function. Then,
+                on the line <em>above</em> the function definition, type /** and press Enter / Return. VS Code will automatically 
+                generate a JSDoc template tailored to your function. The video below shows how this works.
+            </p>
+            <p>
+                <video width="626" height="219" controls>
+                    <source src="./images/jsdoc.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+            <p>Write a description of the function on the first line of the generated template. The description should focus on the <em>purpose</em> of the function. 
+            You don't need to describe how it's implemented unless it's required in order to understand the function's 
+            purpose.</p>
+            <p>VS Code should have generated a template for each parameter (if there are any). The template will look like this:</p>
+            <pre>@param {*} paramName</pre>
+            <p>The asterisk, *, is a placeholder for the expected data type. The data types you're most likely to use are <code>number</code>, 
+            <code>boolean</code>, and <code>string</code>. To represent an array (covered in Week 5), use the name of the data type stored in the array 
+            followed by square brackets e.g.:</p>
+            <pre>@param {number[]} xVals</pre>
+            <p>See the <a href="https://jsdoc.app/tags-param.html" target="_blank">JSDoc reference</a> for more complex examples.</p>
+            <p>As well as specifying the type of your parameters, it's a good idea to add a brief description after the name that explain the 
+                meaning of the parameter. A well-named parameter might not need explaining but, if there's any ambiguity, add a description.
+            </p>
+            <p>If your function has a return statement, VS Code will automatically add the JSDoc keyword <code>@returns</code>. Add the return data type 
+            in curly braces and a description, if required. E.g.:</p>
+            <pre>@returns {string} Description goes here</pre>
+            <p>There are more examples in the <a href="https://jsdoc.app/tags-returns.html" target="_blank">JSDoc reference</a> on the @returns tag.</p>
+            <p>The tags shown above (<code>@param</code> and <code>@returns</code>) are the most common but JSDoc supports many more. Take a look at <a href="https://jsdoc.app/" 
+            target="_blank">the full list</a>.</p>
+        </section>
+        <section>
+            <h2>Reasons To Use JSDoc</h2>
+            <h3>(...aside from the fact that it's required in the assessment for this module!)</h3>
+            <p>Complete documentation makes your code much easier to understand by other programmers. It is typically 
+                required if you are programming in a professional setting.
+            </p>
+            <p>Writing documentation also has the immediate benefit of improving VS Code's code completion and hinting while 
+                your're working on sketches. When you use p5.js functions in your sketches, you may have noticed that VS Code 
+                provides hints that describe the function and show the expected parameters. These hints appear because the 
+                p5.js source code is fully documented using JSDoc. Below is a screenshot showing what happens when you call the 
+                <code>circle()</code> function. Note that the popover describes the function, shows the parameters, and even 
+                highlights which parameter you should provide an argument for next.
+            </p>
+            <img src="./images/circle-hint.png" alt="Popovers for p5.js functions provide descriptions for the function and hints for the expected arguments." width="600">
+            <p>You can see the source of this documentation in the <a href="https://github.com/processing/p5.js/blob/main/src/core/shape/2d_primitives.js" target="_blank">p5.js source code</a> on GitHub. The <code>circle()</code> documentation 
+            starts on line 274.</p>
+        </section>
+    </main>
+</body>
+
+</html>
